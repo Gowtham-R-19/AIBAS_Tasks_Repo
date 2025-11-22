@@ -11,13 +11,12 @@ from UE_04_LinearRegDiagnostic import LinearRegDiagnostic
 # -----------------------------
 data = pd.read_csv("dataset02.csv")
 
-# Keep numeric columns & drop NaNs
-numeric_cols = data.select_dtypes(include=[np.number]).columns.tolist()
-if len(numeric_cols) < 2:
-    raise ValueError("CSV must have at least 2 numeric columns")
+# Ensure x and y columns exist
+if not {'x','y'}.issubset(data.columns):
+    raise ValueError("CSV must have 'x' and 'y' columns")
 
-data = data.rename(columns={numeric_cols[0]: 'x', numeric_cols[1]: 'y'})
-data = data[['x', 'y']].dropna()
+# Keep numeric and drop NaNs
+data = data[['x','y']].apply(pd.to_numeric, errors='coerce').dropna()
 
 # -----------------------------
 # 2. Outlier Removal (IQR)
