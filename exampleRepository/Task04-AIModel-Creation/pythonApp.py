@@ -7,6 +7,8 @@ data = pd.read_csv('dataset03.csv')
 from sklearn.model_selection import train_test_split
 train, test = train_test_split(data, test_size=0.2, random_state=42)
 
+#-----------Create ANN with PyBrain-------------
+
 from pybrain.tools.shortcuts import buildNetwork
 from pybrain.supervised.trainers import BackpropTrainer
 from pybrain.structure import FeedForwardNetwork, LinearLayer, SigmoidLayer
@@ -29,3 +31,16 @@ trainer.trainEpochs(50)  # train for 50 epochs
 # Save model
 from pybrain.tools.xml.networkwriter import NetworkWriter
 NetworkWriter.writeToFile(net, 'UE_05_App3_ANN_Model.xml')
+
+#------------Load Saved Model & Activate---------------------
+from pybrain.tools.xml.networkreader import NetworkReader
+
+# Load saved ANN model
+net_loaded = NetworkReader.readFrom('UE_05_App3_ANN_Model.xml')
+
+# Test first two entries in test set
+for i, row in test.iloc[:2].iterrows():
+    x_input = row[:-1].values
+    print("Activation (new ANN):", net.activate(x_input))
+    print("Activation (loaded ANN):", net_loaded.activate(x_input))
+
