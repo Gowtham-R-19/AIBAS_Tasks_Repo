@@ -1,0 +1,19 @@
+Task 5 Visualization Guide
+==========================
+
+model_comparison_plots.png - 4-subplot comprehensive comparison:
+  1. Top-Left: OLS Model - Actual vs Predicted (Blue scatter)
+  2. Top-Right: ANN Model - Actual vs Predicted (Green scatter)
+  3. Bottom-Left: Residual Analysis - Both models
+  4. Bottom-Right: Error Distribution Histograms
+
+model_fit_comparison.png - Single plot showing:
+  - Red dots: Actual test data
+  - Blue line: OLS fitted curve
+  - Green line: ANN fitted curve
+
+Analysis Points:
+- Diagonal line in scatter plots represents perfect predictions
+- Points closer to diagonal = better performance
+- Residuals closer to zero = better model
+- Narrower error distribution = more consistent predictions
