@@ -603,7 +603,6 @@ else:
 
     print(f"\nAll training analysis plots are available in {stage5_dir}/")
 
-    
 print("\n" + "="*60)
 print("ALL STAGES COMPLETE")
 print("="*60)
