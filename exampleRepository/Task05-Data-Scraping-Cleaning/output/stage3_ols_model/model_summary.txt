@@ -1,0 +1,9 @@
+Linear Regression (OLS) Model Summary
+=====================================
+
+Architecture: y = intercept + slope * x
+
+Training Data: 80% of cleaned scraped data
+Testing Data: 20% of cleaned scraped data
+
+This model serves as a baseline for comparison with the ANN model.
