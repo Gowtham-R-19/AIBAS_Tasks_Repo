@@ -1,0 +1,15 @@
+Model Comparison Summary
+========================
+
+Metrics Calculated:
+- Mean Squared Error (MSE): Lower is better
+- Root Mean Squared Error (RMSE): Lower is better
+- Mean Absolute Error (MAE): Lower is better
+- R² Score: Higher is better (0-1 scale)
+
+Test Set Size: 20% of total cleaned data
+
+Results are saved in model_comparison_metrics.csv
+Detailed predictions are in detailed_predictions.csv
+
+Conclusion: Visual analysis follows in Stage 6
