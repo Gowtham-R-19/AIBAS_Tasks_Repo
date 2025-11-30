@@ -1,0 +1,19 @@
+Artificial Neural Network (ANN) Model Summary
+=============================================
+
+Architecture:
+- Input Layer: 1 neuron
+- Hidden Layer: 8 neurons
+- Output Layer: 1 neuron
+- Bias: Enabled
+
+Training Parameters:
+- Learning Rate: 0.01
+- Momentum: 0.0
+- Epochs: 200
+- Optimizer: Backpropagation
+
+Training Data: 80% of cleaned scraped data
+Testing Data: 20% of cleaned scraped data
+
+This non-linear model is compared against the OLS baseline.
