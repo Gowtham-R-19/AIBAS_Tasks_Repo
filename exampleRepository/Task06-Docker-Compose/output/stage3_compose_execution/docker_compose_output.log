@@ -1,0 +1,55 @@
+Docker Compose Execution Log
+Timestamp: 2025-12-01T16:51:20.780981
+======================================================================
+
+time="2025-12-01T16:51:20+01:00" level=warning msg="C:\\Users\\gowth\\Documents\\Docker\\tmp\\exampleRepository\\Task06-Docker-Compose\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ Network task06-docker-compose_default  Creating
+ Network task06-docker-compose_default  Created
+ Container activationbase_container  Creating
+ Container activationbase_container  Created
+ Container knowledgebase_container  Creating
+ Container knowledgebase_container  Created
+ Container codebase_container  Creating
+ Container codebase_container  Created
+Attaching to activationbase_container, codebase_container, knowledgebase_container
+activationbase_container  | x,y
+activationbase_container  | 0.3728496469820944,0.4152070313334135
+
+[Kactivationbase_container exited with code 0
+[31m[1mAborting on container exit...[0m
+ Container codebase_container  Stopping
+ Container codebase_container  Stopped
+ Container knowledgebase_container  Stopping
+knowledgebase_container   | total 4K     
+knowledgebase_container   | -rwxr-xr-x    1 root     root          42 Dec  1 15:51 activation_data.csv
+knowledgebase_container   | -rwxr-xr-x    1 root     root        3.6K Dec  1 15:51 currentSolution.pkl
+ Container knowledgebase_container  Stopped
+ Container activationbase_container  Stopping
+ Container activationbase_container  Stopped
+
+[Kknowledgebase_container exited with code 0
+codebase_container        | ============================================================
+codebase_container        | UE_07_App5: MODEL ACTIVATION
+codebase_container        | ============================================================
+codebase_container        | 
+codebase_container        | Loading model...
+codebase_container        | âœ“ Model loaded: FeedForwardNetwork
+codebase_container        | 
+codebase_container        | Loading activation data...
+codebase_container        | âœ“ Data loaded: (1, 2)
+codebase_container        |   Input: x=0.372850, y=0.415207
+codebase_container        | 
+codebase_container        | Activating model...
+codebase_container        | Traceback (most recent call last):
+codebase_container        |   File "/codeBase/UE_07_App5.py", line 26, in <module>
+codebase_container        |     prediction = model.activate(x_input)
+codebase_container        |                  ^^^^^^^^^^^^^^^^^^^^^^^
+codebase_container        |   File "/opt/pybrain/pybrain/structure/networks/feedforward.py", line 19, in activate
+codebase_container        |     return super(FeedForwardNetworkComponent, self).activate(inpt)
+codebase_container        |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+codebase_container        |   File "/opt/pybrain/pybrain/structure/modules/module.py", line 122, in activate
+codebase_container        |     self.inputbuffer[self.offset] = inpt
+codebase_container        |     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+codebase_container        | ValueError: setting an array element with a sequence. The requested array would exceed the maximum number of dimension of 1.
+
+[Kcodebase_container exited with code 1
